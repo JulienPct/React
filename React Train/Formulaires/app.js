@@ -2,6 +2,7 @@ function Field ({name, value, onChange, children}){
     return <div className="form-group">
         <label htmlFor={name}>{children}</label>
         <input type="text" value={value} onChange={onChange} id={name} name={name} className="form-control" />
+        {/* Faire attention à bien mettre {name} */}
     </div>
 }
 
@@ -17,7 +18,7 @@ class Home extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            // nom: ['demo2', 'demo1']   Pour les selects
+            // nom: ['demo2', 'demo1']   Pour les selects multiples
 
             // checked: true   Pour les checkbox
 
@@ -111,7 +112,7 @@ class Home extends React.Component {
                 <button className="btn btn-primary">Envoyer</button>
             </div>
             
-            {JSON.stringify(this.state)}
+            {/* {JSON.stringify(this.state)} */}
 
         </form>
 
