@@ -10,7 +10,7 @@ const PRODUCTS = [
 function ProductRow ({product}) {
 
     const name = product.stocked ? product.name : <span className="text-danger">{product.name}</span>
-
+    
     return <tr>
         <td>{name}</td>
         <td>{product.price}</td>
@@ -106,6 +106,14 @@ class FilterableProductTable extends React.Component {
         this.handleInStockChange = this.handleInStockChange.bind(this)
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+
+        return nextProps.products !== this.props.products || 
+               nextState.filterText !== this.props.filterText ||
+               nextState.inStockOnly !== this.props.inStockOnly
+        
+    }
+
     handleFilterTextChange (filterText) {
 
         this.setState({filterText})
@@ -140,3 +148,17 @@ class FilterableProductTable extends React.Component {
 }
 
 ReactDOM.render(<FilterableProductTable products={PRODUCTS}/>, document.querySelector('#app'))
+
+//  Dans le cas de composant pur
+
+/**
+ *   Pour ajouter une clé au début : [...items, newItem]
+ *   Ex : const PRODUCTS2 = [...PRODUCTS, {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 8"}]
+ * 
+ *   Pour ajouter une clé à la fin : [newItem, items...]
+*/
+
+/**
+ *   Pour ajouter un objet : {...object, demo: 1}
+ *   L'objet n'est donc pas muté
+ */
