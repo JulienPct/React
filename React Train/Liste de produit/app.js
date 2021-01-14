@@ -106,13 +106,13 @@ class FilterableProductTable extends React.Component {
         this.handleInStockChange = this.handleInStockChange.bind(this)
     }
 
-    shouldComponentUpdate(nextProps, nextState){
+    // shouldComponentUpdate(nextProps, nextState){
 
-        return nextProps.products !== this.props.products || 
-               nextState.filterText !== this.props.filterText ||
-               nextState.inStockOnly !== this.props.inStockOnly
+    //     return nextProps.products !== this.props.products || 
+    //            nextState.filterText !== this.props.filterText ||
+    //            nextState.inStockOnly !== this.props.inStockOnly
         
-    }
+    // }
 
     handleFilterTextChange (filterText) {
 
