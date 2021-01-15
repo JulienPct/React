@@ -1,0 +1,109 @@
+"use strict";
+
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  var _reactDom = require("react-dom");
+
+  var _react = _interopRequireWildcard(require("react"));
+
+  var _jsxFileName = "C:\\Users\\skybl\\OneDrive\\Documents\\Grafikart\\React\\Parcel\\src\\index.jsx",
+      _s = $RefreshSig$(),
+      _s2 = $RefreshSig$(),
+      _s3 = $RefreshSig$();
+
+  function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+  function useIncrement(initial, step) {
+    _s();
+
+    const [count, setCount] = (0, _react.useState)(initial);
+
+    const increment = () => {
+      setCount(c => c + step);
+    };
+
+    return [count, increment];
+  }
+
+  _s(useIncrement, "fas42Yw+PoMJp/kPAuVho9IBnmY=");
+
+  function Compteur() {
+    _s2();
+
+    const [count, increment] = useIncrement(0, 2);
+    return /*#__PURE__*/_react.default.createElement("button", {
+      onClick: increment,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 12
+      }
+    }, "Incr\xE9menter : ", count);
+  }
+
+  _s2(Compteur, "sNdTb8FPvndgFAi9LLFhmSIZVLk=", false, function () {
+    return [useIncrement];
+  });
+
+  _c = Compteur;
+
+  function CompteurA() {
+    _s3();
+
+    const [count, increment] = useIncrement(0, 2);
+    return /*#__PURE__*/_react.default.createElement("a", {
+      onClick: increment,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26,
+        columnNumber: 12
+      }
+    }, "Incr\xE9menter : ", count);
+  }
+
+  _s3(CompteurA, "sNdTb8FPvndgFAi9LLFhmSIZVLk=", false, function () {
+    return [useIncrement];
+  });
+
+  _c2 = CompteurA;
+  (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement("div", {
+    __self: void 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/_react.default.createElement(Compteur, {
+    __self: void 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/_react.default.createElement(CompteurA, {
+    __self: void 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 9
+    }
+  })), document.getElementById('app'));
+
+  var _c, _c2;
+
+  $RefreshReg$(_c, "Compteur");
+  $RefreshReg$(_c2, "CompteurA");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
